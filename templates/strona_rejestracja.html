@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title> Konto </title>
+    <link rel="stylesheet" type="text/css" href="style">
+    <style>
+      html {
+        width: 90%;
+        margin-top: -70px;
+        float: center;
+      }
+
+      h1 {
+        font-family: Monospace Bold;
+      }
+
+      table {
+        width: 90%;
+        float: right;
+      }
+
+      #Konto {
+        font-family: Calibri;
+        position: center;
+      }
+
+      #Transakcje {
+        font-family: Calibri;
+        position: center;
+      }
+
+      #Koszty_dochody {
+        font-family: Calibri;
+        position: center;
+      }
+
+      #Kategorie {
+        font-family: Calibri;
+        position: center;
+      }
+    </style>
+  </head>
+  <body link="black" vlink="black" alink="gray">
+    <br>
+    <br>
+    <table style="border:solid; border-radius:20px; border-bottom-style:solid; border-left-style:solid; border-right-style:solid; border-top-style:solid; border-margin-top:0px; background:#31b737; border-color: #31bb37;">
+      <tr>
+        <td>
+          <br>
+          <br>
+          <h1>
+            <p align="center" style="color:white"> Rejestracja </p>
+          </h1>
+          <br>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p>
+    <p align="center" style="font-family:Calibri; font-size:19px;"> Podaj niezbędne dane do stworzenia konta. </p>
+    </p>
+    <br>
+    <br>
+    <br>
+    <img src="/static/img/nowe_konto.png" style="margin-left:55%;">
+    <br>
+    <br>
+    <br> {% block content %} {% if messages %} <div class="messages"> {% for message in messages %} <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div> {% endfor %} </div> {% endif %}
+    <!--Register-->
+    <div class="container py-5">
+      <h1>Register</h1>
+      <form method="POST"> {% csrf_token %} {{ register_form|crispy }}
+        <button class="btn btn-primary" type="submit">Register</button>
+      </form>
+      <a class="btn btn-primary" href="Budżet.html">Back to Homepage</a>
+      <p class="text-center">If you already have an account, <a href="login.html">login</a> instead. </p>
+    </div> {% endblock %} <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table>
+      <tr>
+        <p style="font-family: Calibri;">
+        <p align="center"> Autor piktogramów: 0melapics na Freepik, <a href="https://pl.freepik.com/darmowe-wektory/zestaw-ikon-szkicu_979925.htm#query=piktogramem&position=8&from_view=keyword&track=sph">Link do Strony </a>
+        </p>
+        </p>
+      </tr>
+      <tr>
+        <p align="center">
+          <img src="/static/img/copyright.png" style="width:45%; height:45%;">
+        </p>
+      </tr>
+    </table>
+  </body>
+</html>

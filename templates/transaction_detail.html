@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+	<meta charset="UTF-8">
+
+	<title> Szczegóły transakcji </title>
+	<link rel="stylesheet" type="text/css" href="style">
+	<style>
+
+		html{
+		width:90%;
+		margin-top:-70px;
+		float:center;
+		}
+
+		h1{
+		font-family:Monospace Bold;
+		}
+
+		table{
+			width:90%;
+			float:right;
+		}
+	</style>
+</head>
+<body link="black" vlink="black" alink="gray">
+	<br> <br>
+	<table style="border-radius:20px;
+	border-top-style:solid;
+	 background:#31b737; border-color: #31bb37;">
+	<tr>
+		<td>
+		<br> <br>
+		<h1> <p align = "center" style="color:white"> Szczegóły transakcji </p> </h1>
+		<br>
+		</td>
+	</tr>
+	</table>
+	<br> <br> <br> <br> <br>
+
+		<p> <p align = "center" style="font-family:Calibri; font-size:19px; margin-left:10%">
+			 Ta strona wyświetla informacje dotyczące transakcji.  </p> </p>
+<img src = "/static/img/wydatk_przychody.png" style="margin-left:50%">
+
+	<br> <br>
+
+	{% block content %}
+	<div class="transaction-row" style="margin-left: 10%;">
+  <div>
+  <h2><strong>{{transaction.transaction}}</strong></h2>
+</div>
+
+  <!-- wydatek lub dochod -->
+  {% if transaction.expense_or_proceeds == 'Proceeds' %}
+  <p>Wydatek</p>
+  <p>Koszt: <strong>-{{ transaction.amount }}</strong></p>
+  {% else %}
+  <p>Dochód</p>
+  <p>Wartość: <strong>+{{ transaction.amount }}</strong></p>
+  {%endif%}
+
+  <p>Kategoria: <strong>{{ transaction.category }}</strong></p>
+  <p>Data transakcji: <strong>{{ transaction.date_of_transaction }}</strong></p>
+</div>
+	{% endblock %}
+
+	<br>
+<br>
+<br>
+<br>
+<br>
+<p style="font-family: Calibri;">
+<p align="center"> Autor piktogramów: 0melapics na Freepik, <a href="https://pl.freepik.com/darmowe-wektory/zestaw-ikon-szkicu_979925.htm#query=piktogramem&position=8&from_view=keyword&track=sph">Link do Strony</a>
+</p>
+</p>
+<p align="center">
+  <img src="/static/img/copyright.png" style="width:45%; height:45%;">
+</p>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
